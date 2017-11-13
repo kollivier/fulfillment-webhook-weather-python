@@ -68,6 +68,7 @@ def processRequest(req):
             "source": "apiai-weather-webhook-sample"
         }
     yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
+    print("Yahoo URL: {}".format(yql_url))
     result = urlopen(yql_url).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
